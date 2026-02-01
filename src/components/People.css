@@ -1,0 +1,186 @@
+/* --- SHARED CARD & LAYOUT --- */
+.gallery-wrapper {
+    min-height: 100vh;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+    padding-bottom: 4rem;
+}
+
+/* Header Styles */
+.gallery-header {
+    position: relative;
+    padding: 5rem 1.5rem 3rem;
+    text-align: center;
+}
+
+.main-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: linear-gradient(to right, #facc15, #ca8a04);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.section-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #eab308;
+    margin-bottom: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.section-subtext {
+    text-align: center;
+    color: #9ca3af;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+/* --- CARD CLASSES --- */
+
+/* Base Card Styles */
+.card-base {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(202, 138, 4, 0.3);
+    background: #111;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    flex-shrink: 0;
+}
+
+.card-base:hover {
+    border-color: #facc15;
+    /* Gold glow */
+    transform: translateY(-5px);
+    z-index: 10;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.card-base:hover .card-image {
+    transform: scale(1.05);
+}
+
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent 60%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+}
+
+.card-caption {
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.card-tag {
+    display: inline-block;
+    background: #eab308;
+    /* Yellow-500 */
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    width: fit-content;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* 1. Large Grid Cards (For 24-25) */
+.card-lg {
+    width: 600px;
+    height: 400px;
+}
+
+/* 2. Feature Static Card (For 25-26) */
+.card-feature {
+    width: 900px;
+    height: 550px;
+    box-shadow: 0 20px 50px rgba(234, 179, 8, 0.15);
+    /* Gold shadow */
+}
+
+/* 3. Standard Carousel Cards */
+.card-standard {
+    width: 500px;
+    height: 350px;
+}
+
+/* --- LAYOUTS --- */
+
+/* Static Grid (Centered) */
+.static-grid {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    padding: 0 2rem;
+}
+
+/* Marquee / Flowing Layout */
+.marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    padding: 2rem 0;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee-track {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    animation: scroll 30s linear infinite;
+}
+
+.marquee-wrapper:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+
+    .card-lg,
+    .card-feature {
+        width: 90vw;
+        height: 60vw;
+        /* Keep aspect ratio roughly */
+    }
+}
+
+@media (max-width: 768px) {
+    .card-standard {
+        width: 300px;
+        height: 200px;
+    }
+}

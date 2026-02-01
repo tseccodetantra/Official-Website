@@ -20,25 +20,7 @@ const Footer = () => {
                         Empowering developers with the best tools and resources. Join our community and start building the future today.
                     </p>
                 </div>
-
-                <div>
-                    <h3 className="footer-heading">Quick Links</h3>
-                    <ul className="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#blog">Blog</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 className="footer-heading">Legal</h3>
-                    <ul className="footer-links">
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                        <li><a href="#terms">Terms of Service</a></li>
-                        <li><a href="#cookie">Cookie Policy</a></li>
-                    </ul>
-                </div>
+                <div></div>
 
                 <div>
                     <h3 className="footer-heading">Connect</h3>
