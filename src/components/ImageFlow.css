@@ -1,0 +1,325 @@
+/* ============================
+   GALLERY / IMAGE FLOW
+   Follows the site-wide design system:
+   - Orbitron headings, Space Mono body
+   - CSS variables from App.css
+   - Shared .section-header / .section-title
+   - IntersectionObserver visibility animations
+   - Radial-glow ::before decorators
+   - card-bg cards with gold borders
+   - cubic-bezier(0.4, 0, 0.2, 1) transitions
+   - 3-tier responsive (1024 / 768 / 480)
+   ============================ */
+
+/* ---- Section Wrapper ---- */
+.gallery {
+    padding: 120px 20px;
+    background: var(--secondary-bg);
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(251, 146, 60, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* ---- Container ---- */
+.gallery-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* ===========================
+   FEATURE IMAGE
+   =========================== */
+.gallery-feature {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery.visible .gallery-feature {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---- Year Badge ---- */
+.gallery-year-label {
+    text-align: center;
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+}
+
+.gallery.visible .gallery-year-label {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-year-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    background: rgba(245, 158, 11, 0.05);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: 50px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+.gallery-year-badge:hover {
+    background: rgba(245, 158, 11, 0.1);
+    border-color: var(--accent-gold);
+    transform: translateY(-2px);
+}
+
+/* ===========================
+   CARD SYSTEM
+   Matches .event-card / .feature-card
+   =========================== */
+
+.gallery-card {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    background: var(--card-bg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+}
+
+/* Shimmer sweep on hover — matches event-card::before */
+.gallery-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.1), transparent);
+    transition: left 0.6s ease;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.gallery-card:hover::before {
+    left: 100%;
+}
+
+.gallery-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-gold);
+    box-shadow: 0 24px 64px var(--glow-gold);
+    z-index: 10;
+}
+
+/* ---- Image ---- */
+.gallery-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-card:hover .gallery-card__image {
+    transform: scale(1.05);
+}
+
+/* ---- Overlay ---- */
+.gallery-card__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10, 10, 15, 0.9) 0%, transparent 55%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    z-index: 1;
+    opacity: 0.85;
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-card:hover .gallery-card__overlay {
+    opacity: 1;
+}
+
+/* ---- Caption ---- */
+.gallery-card__caption {
+    color: var(--text-primary);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+/* ---- Tag — matches .highlight-badge style ---- */
+.gallery-card__tag {
+    display: inline-block;
+    background: rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    color: var(--accent-gold);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.3rem 0.85rem;
+    border-radius: 50px;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    width: fit-content;
+    transition: all 0.3s ease;
+}
+
+.gallery-card:hover .gallery-card__tag {
+    background: linear-gradient(135deg, var(--accent-gold), var(--accent-orange));
+    border-color: var(--accent-gold);
+    color: #000;
+}
+
+/* ===========================
+   CARD SIZES
+   =========================== */
+
+/* Feature Card */
+.gallery-card--feature {
+    width: min(900px, 90vw);
+    height: min(550px, 60vw);
+    box-shadow: 0 20px 60px var(--glow-gold);
+}
+
+/* Standard Carousel Cards */
+.gallery-card--standard {
+    width: 500px;
+    height: 350px;
+}
+
+/* ===========================
+   MARQUEE / FLOWING LAYOUT
+   =========================== */
+
+.gallery-marquee {
+    width: 100%;
+    overflow: hidden;
+    padding: 2rem 0;
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+}
+
+.gallery.visible .gallery-marquee {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-marquee__track {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    animation: gallery-scroll 35s linear infinite;
+}
+
+.gallery-marquee:hover .gallery-marquee__track {
+    animation-play-state: paused;
+}
+
+@keyframes gallery-scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-33.333%);
+    }
+}
+
+/* ===========================
+   RESPONSIVE
+   3-tier: 1024 / 768 / 480
+   =========================== */
+@media (max-width: 1024px) {
+    .gallery-card--feature {
+        width: 90vw;
+        height: 55vw;
+    }
+
+    .gallery-card--standard {
+        width: 400px;
+        height: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        padding: 80px 20px;
+    }
+
+    .gallery-feature {
+        margin-bottom: 40px;
+    }
+
+    .gallery-card--standard {
+        width: 280px;
+        height: 190px;
+    }
+
+    .gallery-marquee__track {
+        gap: 1rem;
+    }
+
+    .gallery-card__caption {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        padding: 60px 20px;
+    }
+
+    .gallery-card--standard {
+        width: 240px;
+        height: 160px;
+    }
+
+    .gallery-card--feature {
+        width: 92vw;
+        height: 62vw;
+    }
+
+    .gallery-card__caption {
+        font-size: 0.9rem;
+    }
+
+    .gallery-card__tag {
+        font-size: 0.6rem;
+        padding: 0.2rem 0.6rem;
+    }
+
+    .gallery-year-badge {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+}

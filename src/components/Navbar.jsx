@@ -35,6 +35,7 @@ const Navbar = () => {
           <a onClick={() => scrollToSection('home')} className="nav-link">Home</a>
           <a onClick={() => scrollToSection('about')} className="nav-link">About</a>
           <a onClick={() => scrollToSection('events')} className="nav-link">Events</a>
+          <a onClick={() => scrollToSection('gallery')} className="nav-link">Gallery</a>
           <a href="/NFC-4.0/" className="nav-link highlight">Need For Code 4.0</a>
         </div>
 

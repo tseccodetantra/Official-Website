@@ -6,9 +6,9 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: <Instagram />, url: '#', label: 'Instagram' },
-    { icon: <Linkedin />, url: '#', label: 'LinkedIn' },
-    { icon: <Github />, url: '#', label: 'GitHub' },
+    { icon: <Instagram />, url: 'https://www.instagram.com/tseccodetantra/?hl=en', label: 'Instagram' },
+    { icon: <Linkedin />, url: 'https://in.linkedin.com/company/tsec-codetantra', label: 'LinkedIn' },
+    { icon: <Github />, url: 'https://github.com/tseccodetantra', label: 'GitHub' },
     { icon: <Mail />, url: '#', label: 'Email' }
   ];
 

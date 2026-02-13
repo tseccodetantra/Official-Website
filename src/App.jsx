@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Events from './components/Events';
+import ImageFlow from './components/ImageFlow';
 import Footer from './components/Footer';
 import './App.css';
 
@@ -30,6 +31,7 @@ function App() {
       <Hero />
       <About />
       <Events />
+      <ImageFlow />
       <Footer />
     </div>
   );
