@@ -1,92 +1,144 @@
+import {
+  Rocket,
+  Brain,
+  Laptop,
+  Users,
+  Target,
+  Zap,
+  Lightbulb,
+  Handshake
+} from "lucide-react";
+
 function About() {
   return (
     <section className="about" id="about">
-
       <div className="about-container">
 
         {/* TITLE */}
-        <h2 className="section-title">About CodeTantra</h2>
+        <h2 className="section-title floating-title">About CodeTantra</h2>
+
         <div className="section-underline"></div>
 
-        {/* TEXT BOX */}
+        {/* MAIN CONTENT */}
         <div className="about-content">
 
-          <h3 className="about-heading">Empowering Tomorrow's Innovators</h3>
+          {/* HEADING */}
+          <h3 className="about-heading comic-heading sparkle-text">
+            <span className="rocket-icon">
+              <Rocket size={36} />
+            </span>
+
+            Where Code Meets Creativity!
+          </h3>
 
           <p className="about-text">
-            TSEC CodeTantra is the premier technical committee of the Artificial
-            Intelligence and Data Science Department at Thadomal Shahani
-            Engineering College.
+            TSEC CodeTantra is the official technical committee of the
+            Artificial Intelligence and Data Science Department at
+            Thadomal Shahani Engineering College.
           </p>
 
           <p className="about-text">
-            Through workshops, hackathons, and technical events, we build
-            confident developers and innovators.
+            The committee functions under the guidance of our respected
+            Head of Department, <strong>Dr. Madhuri Ma’am</strong>, who
+            continuously inspires innovation and excellence.
           </p>
 
+          <p className="about-text">
+            Through hackathons, workshops, coding competitions, and
+            mentorship programs, we empower students with real-world
+            exposure and technical confidence.
+          </p>
+
+          <p className="about-text">
+            At CodeTantra, we don’t just teach coding — we build leaders,
+            innovators, and digital superheroes for tomorrow.
+          </p>
+
+          {/* BADGES */}
           <div className="about-features">
-            <div className="feature-badge">🚀 Innovation First</div>
-            <div className="feature-badge">💡 Hands-on Learning</div>
-            <div className="feature-badge">🏆 Competitive Spirit</div>
-          </div>
 
+            <div className="feature-badge">
+              <Zap size={18} /> Learn by Doing
+            </div>
+
+            <div className="feature-badge pink">
+              <Lightbulb size={18} /> Think Big
+            </div>
+
+            <div className="feature-badge blue">
+              <Target size={18} /> Build Smart
+            </div>
+
+            <div className="feature-badge">
+              <Handshake size={18} /> Grow Together
+            </div>
+
+          </div>
         </div>
+
 
         {/* FOCUS CARDS */}
         <div className="focus-grid">
 
-          {/* CARD 1 */}
           <div className="focus-card">
 
-            <div className="focus-icon">🧠</div>
+            <div className="focus-icon">
+              <Brain size={48} />
+            </div>
 
             <h3 className="focus-title">AI & Data Science</h3>
 
             <p className="focus-description">
-              Leveraging cutting-edge artificial intelligence and data science
-              technologies to empower students
+              Master modern AI tools, machine learning models, and
+              data-driven solutions to solve real-world problems.
             </p>
 
           </div>
 
-          {/* CARD 2 */}
+
           <div className="focus-card">
 
-            <div className="focus-icon">💻</div>
+            <div className="focus-icon">
+              <Laptop size={48} />
+            </div>
 
             <h3 className="focus-title">Programming Excellence</h3>
 
             <p className="focus-description">
-              Building strong foundations in programming through hands-on
-              workshops and practical projects
+              Build strong coding foundations through projects,
+              challenges, hands-on workshops, and competitive practice.
             </p>
 
           </div>
 
-          {/* CARD 3 */}
+
           <div className="focus-card">
 
-            <div className="focus-icon">👥</div>
+            <div className="focus-icon">
+              <Users size={48} />
+            </div>
 
             <h3 className="focus-title">Community Driven</h3>
 
             <p className="focus-description">
-              Fostering a collaborative environment where students learn, grow,
-              and succeed together
+              Learn, collaborate, mentor, and grow together in a friendly,
+              inclusive, and supportive environment.
             </p>
 
           </div>
 
-          {/* CARD 4 (HIGHLIGHT) */}
+
           <div className="focus-card highlight">
 
-            <div className="focus-icon">🎯</div>
+            <div className="focus-icon">
+              <Target size={48} />
+            </div>
 
             <h3 className="focus-title">Industry Ready</h3>
 
             <p className="focus-description">
-              Preparing students for real-world challenges through competitive
-              events and hackathons
+              Get prepared for internships, placements, startups, and
+              professional careers with real-world exposure.
             </p>
 
           </div>
