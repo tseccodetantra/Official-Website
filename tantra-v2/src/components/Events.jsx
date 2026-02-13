@@ -1,9 +1,14 @@
+import { useState } from "react";
 function Events() {
+  const [activeCard, setActiveCard] = useState(null);
+
+  const handleToggle = (card) => {
+    setActiveCard((prev) => (prev === card ? null : card));
+  };
+
   return (
     <section className="events" id="events">
-
       <div className="events-container">
-
         <h2 className="section-title">Our Events</h2>
         <div className="section-underline"></div>
 
@@ -14,95 +19,103 @@ function Events() {
         <div className="events-grid">
 
           {/* HACKATHON */}
-          <div className="event-card">
+          <div
+            className={`event-card ${activeCard === "hackathon" ? "open" : ""}`}
+          >
+            <div
+              className="event-click-area"
+              onClick={() => handleToggle("hackathon")}
+            >
+              <div className="event-caption">EPISODE 1</div>
 
-            <div className="event-caption">EPISODE 1</div>
+              <div className="event-icon-wrapper">
+                <div className="event-icon">🏆</div>
+              </div>
 
-            <div className="event-icon-wrapper">
-              <div className="event-icon">🏆</div>
+              <h3 className="event-title">Hackathons</h3>
+              <p className="event-subtitle">NEED FOR CODE SERIES</p>
+
+              <p className="event-description">
+                Our flagship hackathon series where students collaborate,
+                innovate, and build real-world solutions.
+              </p>
             </div>
 
-            <h3 className="event-title">Hackathons</h3>
-
-            <p className="event-subtitle">NEED FOR CODE SERIES</p>
-
-            <p className="event-description">
-              Our flagship hackathon series where students collaborate, innovate,
-              and build groundbreaking solutions to real-world problems.
-              Experience intense coding marathons, mentorship from industry experts,
-              and exciting prizes.
-            </p>
-
-            <div className="event-features">
-              <div className="event-feature">24-48 Hour Sprints</div>
-              <div className="event-feature">Industry Mentors</div>
-              <div className="event-feature">Cash Prizes</div>
-              <div className="event-feature">Networking Opportunities</div>
+            <div className="gallery-wrapper">
+              <div className="polaroid-gallery">
+                {[1, 2, 3, 4].map((num) => (
+                  <div
+                    className="polaroid"
+                    key={num}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <img
+                      src={`https://picsum.photos/300/200?random=${num}`}
+                      alt="event"
+                    />
+                    <p>
+                      {[
+                        "Opening Ceremony",
+                        "Midnight Coding",
+                        "Team Strategy",
+                        "Prize Distribution",
+                      ][num - 1]}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
-
-            <a href="#" className="event-cta">EXPLORE NOW</a>
           </div>
 
           {/* WORKSHOPS */}
-          <div className="event-card">
+          <div
+            className={`event-card ${activeCard === "workshop" ? "open" : ""}`}
+          >
+            <div
+              className="event-click-area"
+              onClick={() => handleToggle("workshop")}
+            >
+              <div className="event-caption">EPISODE 2</div>
 
-            <div className="event-caption">EPISODE 2</div>
+              <div className="event-icon-wrapper">
+                <div className="event-icon">💡</div>
+              </div>
 
-            <div className="event-icon-wrapper">
-              <div className="event-icon">💡</div>
+              <h3 className="event-title">Workshops</h3>
+              <p className="event-subtitle">SKILL DEVELOPMENT</p>
+
+              <p className="event-description">
+                Hands-on workshops covering ML, Web Dev, Cloud & more from certified practioners to help develop skills.
+              </p>
             </div>
 
-            <h3 className="event-title">Workshops</h3>
-
-            <p className="event-subtitle">SKILL DEVELOPMENT</p>
-
-            <p className="event-description">
-              Hands-on technical workshops covering cutting-edge technologies
-              like Machine Learning, Web Development, Cloud Computing, and more.
-              Learn from experienced professionals and gain practical skills.
-            </p>
-
-            <div className="event-features">
-              <div className="event-feature">Expert Speakers</div>
-              <div className="event-feature">Live Coding Sessions</div>
-              <div className="event-feature">Certificates</div>
-              <div className="event-feature">Project-Based Learning</div>
+            <div className="gallery-wrapper">
+              <div className="polaroid-gallery">
+                {[5, 6, 7, 8].map((num) => (
+                  <div
+                    className="polaroid"
+                    key={num}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <img
+                      src={`https://picsum.photos/300/200?random=${num}`}
+                      alt="event"
+                    />
+                    <p>
+                      {[
+                        "Live Coding",
+                        "Interactive Q&A",
+                        "Hands-on Practice",
+                        "Certification Moment",
+                      ][num - 5]}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
-
-            <a href="#" className="event-cta">EXPLORE NOW</a>
-          </div>
-
-          {/* COMPETITIONS */}
-          <div className="event-card">
-
-            <div className="event-caption">EPISODE 3</div>
-
-            <div className="event-icon-wrapper">
-              <div className="event-icon">⚡</div>
-            </div>
-
-            <h3 className="event-title">Competitions</h3>
-
-            <p className="event-subtitle">CODING CHALLENGES</p>
-
-            <p className="event-description">
-              Regular competitive programming contests, algorithm challenges,
-              and coding competitions to sharpen your problem-solving skills
-              and prepare for technical interviews.
-            </p>
-
-            <div className="event-features">
-              <div className="event-feature">Weekly Contests</div>
-              <div className="event-feature">DSA Practice</div>
-              <div className="event-feature">Leaderboards</div>
-              <div className="event-feature">Interview Prep</div>
-            </div>
-
-            <a href="#" className="event-cta">EXPLORE NOW</a>
           </div>
 
         </div>
-
       </div>
     </section>
   );
