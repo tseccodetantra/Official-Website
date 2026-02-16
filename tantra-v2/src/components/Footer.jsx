@@ -4,7 +4,7 @@ function Footer() {
 
       <div className="footer-container">
 
-        {/* LEFT */}
+        {/* LEFT SECTION - BRANDING */}
         <div className="footer-brand">
 
           <div className="footer-logo">
@@ -17,65 +17,97 @@ function Footer() {
 
           <p className="footer-description">
             Empowering tomorrow's innovators through code,
-            creativity, and collaboration
+            creativity, and collaboration 💻✨
           </p>
 
           <div className="footer-social">
 
-            <a href="#" className="social-icon">📷</a>
+            <a 
+              href="https://instagram.com/codetantra" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon"
+              aria-label="Instagram"
+            >
+              📷
+            </a>
 
-            <a href="#" className="social-icon">💼</a>
+            <a 
+              href="https://linkedin.com/company/codetantra" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon"
+              aria-label="LinkedIn"
+            >
+              💼
+            </a>
 
-            <a href="#" className="social-icon">🐙</a>
+            <a 
+              href="https://github.com/codetantra" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon"
+              aria-label="GitHub"
+            >
+              🐙
+            </a>
 
-            <a href="#" className="social-icon">✉️</a>
+            <a 
+              href="mailto:codetantra@tsec.edu"
+              className="social-icon"
+              aria-label="Email"
+            >
+              ✉️
+            </a>
 
           </div>
 
         </div>
 
-        {/* CENTER */}
+        {/* CENTER SECTION - QUICK LINKS */}
         <div className="footer-section">
 
           <h3>Quick Links</h3>
 
           <ul className="footer-links">
 
-            <li><a href="#about">About Us</a></li>
+            <li><a href="#home">🏠 Home</a></li>
 
-            <li><a href="#events">Events</a></li>
+            <li><a href="#about">ℹ️ About Us</a></li>
 
-            <li><a href="#">Need For Code</a></li>
+            <li><a href="#events">🎪 Events</a></li>
 
-            <li><a href="#">Contact</a></li>
+            <li><a href="#nfc">🚀 Need For Code 4.0</a></li>
+
+            <li><a href="#contact">📞 Contact</a></li>
 
           </ul>
 
         </div>
 
-        {/* RIGHT */}
+        {/* RIGHT SECTION - CONTACT */}
         <div className="footer-contact">
 
           <h3>Get In Touch</h3>
 
-          <p>Thadomal Shahani Engineering College</p>
+          <p>🏫 Thadomal Shahani Engineering College</p>
 
-          <p>AI & Data Science Department</p>
+          <p>🤖 AI & Data Science Department</p>
 
-          <p>Mumbai, Maharashtra</p>
+          <p>📍 Mumbai, Maharashtra</p>
 
           <a
             href="mailto:codetantra@tsec.edu"
             className="footer-email"
           >
-            codetantra@tsec.edu
+            📧 codetantra@tsec.edu
           </a>
 
         </div>
 
       </div>
 
-      {/* BOTTOM */}
+      {/* BOTTOM SECTION */}
       <div className="footer-bottom">
 
         <p>© 2026 TSEC CodeTantra. All rights reserved.</p>
