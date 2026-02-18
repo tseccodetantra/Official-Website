@@ -1,4 +1,11 @@
 import { useState } from "react";
+
+// ✅ Import Hackathon Images
+import hackathon1 from "../assets/hackathon1.jpg";
+import hackathon2 from "../assets/hackathon2.jpg";
+import hackathon3 from "../assets/hackathon3.jpg";
+import hackathon4 from "../assets/hackathon4.jpg";
+
 function Events() {
   const [activeCard, setActiveCard] = useState(null);
 
@@ -18,7 +25,7 @@ function Events() {
 
         <div className="events-grid">
 
-          {/* HACKATHON */}
+          {/* ================= HACKATHON ================= */}
           <div
             className={`event-card ${activeCard === "hackathon" ? "open" : ""}`}
           >
@@ -36,38 +43,44 @@ function Events() {
               <p className="event-subtitle">NEED FOR CODE SERIES</p>
 
               <p className="event-description">
-                Our flagship hackathon series where students collaborate,
-                innovate, and build real-world solutions.
+                Our Flagship Hackathon Series-
+                Need For Code is a high-impact hackathon where students
+                collaborate, innovate, and build real-world solutions.
+                Participants tackle industry-relevant challenges, develop
+                functional prototypes, and gain hands-on experience with
+                modern technologies — all in an intense, fast-paced environment.
+                <br /><br />
+                More than just coding, it’s about teamwork, creativity, and
+                turning ideas into reality.
               </p>
             </div>
 
             <div className="gallery-wrapper">
               <div className="polaroid-gallery">
-                {[1, 2, 3, 4].map((num) => (
-                  <div
-                    className="polaroid"
-                    key={num}
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <img
-                      src={`https://picsum.photos/300/200?random=${num}`}
-                      alt="event"
-                    />
-                    <p>
-                      {[
-                        "Opening Ceremony",
-                        "Midnight Coding",
-                        "Team Strategy",
-                        "Prize Distribution",
-                      ][num - 1]}
-                    </p>
-                  </div>
-                ))}
+                {[hackathon1, hackathon2, hackathon3, hackathon4].map(
+                  (img, index) => (
+                    <div
+                      className="polaroid"
+                      key={index}
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <img src={img} alt={`Hackathon ${index + 1}`} />
+                      <p>
+                        {[
+                          // "Opening Ceremony",
+                          // "Midnight Coding",
+                          // "Team Collaboration",
+                          // "Prize Distribution",
+                        ][index]}
+                      </p>
+                    </div>
+                  )
+                )}
               </div>
             </div>
           </div>
 
-          {/* WORKSHOPS */}
+          {/* ================= WORKSHOPS ================= */}
           <div
             className={`event-card ${activeCard === "workshop" ? "open" : ""}`}
           >
@@ -85,7 +98,15 @@ function Events() {
               <p className="event-subtitle">SKILL DEVELOPMENT</p>
 
               <p className="event-description">
-                Hands-on workshops covering ML, Web Dev, Cloud & more from certified practioners to help develop skills.
+                Through immersive technical events, we bridge the gap between
+                theory and real-world application. Students engage in hands-on
+                challenges, collaborate with peers, and learn from experienced
+                mentors in a fast-paced, practical environment.
+                <br /><br />
+                More than just learning, it’s about building skills, gaining
+                confidence, and turning knowledge into real impact. Where
+                curiosity evolves into capability and ideas grow into tangible
+                outcomes.
               </p>
             </div>
 
@@ -99,7 +120,7 @@ function Events() {
                   >
                     <img
                       src={`https://picsum.photos/300/200?random=${num}`}
-                      alt="event"
+                      alt="Workshop event"
                     />
                     <p>
                       {[
