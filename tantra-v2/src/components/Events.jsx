@@ -6,6 +6,12 @@ import hackathon2 from "../assets/hackathon2.jpg";
 import hackathon3 from "../assets/hackathon3.jpg";
 import hackathon4 from "../assets/hackathon4.jpg";
 
+// ✅ Import Workshop Images
+import WS1 from "../assets/WS1.jpeg";
+import WS2 from "../assets/WS2.jpeg";
+import WS3 from "../assets/WS3.jpeg";
+import WS4 from "../assets/WS4.jpeg";
+
 function Events() {
   const [activeCard, setActiveCard] = useState(null);
 
@@ -26,9 +32,7 @@ function Events() {
         <div className="events-grid">
 
           {/* ================= HACKATHON ================= */}
-          <div
-            className={`event-card ${activeCard === "hackathon" ? "open" : ""}`}
-          >
+          <div className={`event-card ${activeCard === "hackathon" ? "open" : ""}`}>
             <div
               className="event-click-area"
               onClick={() => handleToggle("hackathon")}
@@ -43,12 +47,12 @@ function Events() {
               <p className="event-subtitle">NEED FOR CODE SERIES</p>
 
               <p className="event-description">
-                Our Flagship Hackathon Series-
-                Need For Code is a high-impact hackathon where students
-                collaborate, innovate, and build real-world solutions.
-                Participants tackle industry-relevant challenges, develop
-                functional prototypes, and gain hands-on experience with
-                modern technologies — all in an intense, fast-paced environment.
+                Our Flagship Hackathon Series - Need For Code is a high-impact
+                hackathon where students collaborate, innovate, and build
+                real-world solutions. Participants tackle industry-relevant
+                challenges, develop functional prototypes, and gain hands-on
+                experience with modern technologies — all in an intense,
+                fast-paced environment.
                 <br /><br />
                 More than just coding, it’s about teamwork, creativity, and
                 turning ideas into reality.
@@ -65,14 +69,7 @@ function Events() {
                       onClick={(e) => e.stopPropagation()}
                     >
                       <img src={img} alt={`Hackathon ${index + 1}`} />
-                      <p>
-                        {[
-                          // "Opening Ceremony",
-                          // "Midnight Coding",
-                          // "Team Collaboration",
-                          // "Prize Distribution",
-                        ][index]}
-                      </p>
+                      <p></p>
                     </div>
                   )
                 )}
@@ -81,9 +78,7 @@ function Events() {
           </div>
 
           {/* ================= WORKSHOPS ================= */}
-          <div
-            className={`event-card ${activeCard === "workshop" ? "open" : ""}`}
-          >
+          <div className={`event-card ${activeCard === "workshop" ? "open" : ""}`}>
             <div
               className="event-click-area"
               onClick={() => handleToggle("workshop")}
@@ -112,24 +107,14 @@ function Events() {
 
             <div className="gallery-wrapper">
               <div className="polaroid-gallery">
-                {[5, 6, 7, 8].map((num) => (
+                {[WS1, WS2, WS3, WS4].map((img, index) => (
                   <div
                     className="polaroid"
-                    key={num}
+                    key={index}
                     onClick={(e) => e.stopPropagation()}
                   >
-                    <img
-                      src={`https://picsum.photos/300/200?random=${num}`}
-                      alt="Workshop event"
-                    />
-                    <p>
-                      {[
-                        "Live Coding",
-                        "Interactive Q&A",
-                        "Hands-on Practice",
-                        "Certification Moment",
-                      ][num - 5]}
-                    </p>
+                    <img src={img} alt={`Workshop ${index + 1}`} />
+                    <p></p>
                   </div>
                 ))}
               </div>
