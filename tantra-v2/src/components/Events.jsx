@@ -1,79 +1,131 @@
+import { useState } from "react";
+
+// ✅ Import Hackathon Images
+import hackathon1 from "../assets/hackathon1.jpg";
+import hackathon2 from "../assets/hackathon2.jpg";
+import hackathon3 from "../assets/hackathon3.jpg";
+import hackathon4 from "../assets/hackathon4.jpg";
+
+// ✅ Import Workshop Images
+import WS1 from "../assets/WS1.jpeg";
+import WS2 from "../assets/WS2.jpeg";
+import WS3 from "../assets/WS3.jpeg";
+import WS4 from "../assets/WS4.jpeg";
+
 function Events() {
-    return (
-        <section className="events" id="events">
-            <div className="events-container">
-                <h2 className="section-title">Epic Events</h2>
-                <div className="section-underline"></div>
+  const [activeCard, setActiveCard] = useState(null);
+
+  const handleToggle = (card) => {
+    setActiveCard((prev) => (prev === card ? null : card));
+  };
+
+  return (
+    <section className="events" id="events">
+      <div className="events-container">
+        <h2 className="section-title">Our Events</h2>
+        <div className="section-underline"></div>
 
                 <p className="events-intro">
                     Choose your battle! From code wars to robot rumbles, we've got challenges
                     that'll push every tech warrior to their limits. 🔥
                 </p>
 
-                <div className="events-grid">
-                    <div className="event-card">
-                        <div className="event-caption">MAIN EVENT</div>
-                        <div className="event-icon-wrapper">
-                            <div className="event-icon">⚡</div>
-                        </div>
-                        <h3 className="event-title">HACKATHON</h3>
-                        <div className="event-subtitle">24 Hours of Pure Code</div>
-                        <p className="event-description">
-                            The ultimate coding marathon where teams race against time to build
-                            innovative solutions to real-world problems. No sleep, all code!
-                        </p>
-                        <div className="event-features">
-                            <div className="event-feature">24 Hours Non-Stop</div>
-                            <div className="event-feature">Team of 3-4</div>
-                            <div className="event-feature">₹50,000 Prize</div>
-                            <div className="event-feature">Industry Mentors</div>
-                        </div>
-                        <a href="#" className="event-cta">Register Now</a>
-                    </div>
+        <div className="events-grid">
 
-                    <div className="event-card">
-                        <div className="event-caption">FUN ROUND</div>
-                        <div className="event-icon-wrapper">
-                            <div className="event-icon">🎯</div>
-                        </div>
-                        <h3 className="event-title">CODE HUNT</h3>
-                        <div className="event-subtitle">Debug the Mystery</div>
-                        <p className="event-description">
-                            A thrilling scavenger hunt where clues are hidden in code snippets.
-                            Decode, solve, and race to the finish line!
-                        </p>
-                        <div className="event-features">
-                            <div className="event-feature">3 Hour Rounds</div>
-                            <div className="event-feature">Solo or Pairs</div>
-                            <div className="event-feature">₹20,000 Prize</div>
-                            <div className="event-feature">All Languages</div>
-                        </div>
-                        <a href="#" className="event-cta">Register Now</a>
-                    </div>
+          {/* ================= HACKATHON ================= */}
+          <div className={`event-card ${activeCard === "hackathon" ? "open" : ""}`}>
+            <div
+              className="event-click-area"
+              onClick={() => handleToggle("hackathon")}
+            >
+              <div className="event-caption">EPISODE 1</div>
 
-                    <div className="event-card">
-                        <div className="event-caption">MEGA EVENT</div>
-                        <div className="event-icon-wrapper">
-                            <div className="event-icon">🤖</div>
-                        </div>
-                        <h3 className="event-title">ROBO WARS</h3>
-                        <div className="event-subtitle">Battle of the Bots</div>
-                        <p className="event-description">
-                            Engineer your ultimate battle robot and crush the competition in
-                            a spectacular arena of steel, sparks, and strategy!
-                        </p>
-                        <div className="event-features">
-                            <div className="event-feature">Weight Classes</div>
-                            <div className="event-feature">Team of 2-5</div>
-                            <div className="event-feature">₹30,000 Prize</div>
-                            <div className="event-feature">Open Arena</div>
-                        </div>
-                        <a href="#" className="event-cta">Register Now</a>
-                    </div>
-                </div>
+              <div className="event-icon-wrapper">
+                <div className="event-icon">🏆</div>
+              </div>
+
+              <h3 className="event-title">Hackathons</h3>
+              <p className="event-subtitle">NEED FOR CODE SERIES</p>
+
+              <p className="event-description">
+                Our Flagship Hackathon Series - Need For Code is a high-impact
+                hackathon where students collaborate, innovate, and build
+                real-world solutions. Participants tackle industry-relevant
+                challenges, develop functional prototypes, and gain hands-on
+                experience with modern technologies — all in an intense,
+                fast-paced environment.
+                <br /><br />
+                More than just coding, it’s about teamwork, creativity, and
+                turning ideas into reality.
+              </p>
             </div>
-        </section>
-    );
+
+            <div className="gallery-wrapper">
+              <div className="polaroid-gallery">
+                {[hackathon1, hackathon2, hackathon3, hackathon4].map(
+                  (img, index) => (
+                    <div
+                      className="polaroid"
+                      key={index}
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <img src={img} alt={`Hackathon ${index + 1}`} />
+                      <p></p>
+                    </div>
+                  )
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* ================= WORKSHOPS ================= */}
+          <div className={`event-card ${activeCard === "workshop" ? "open" : ""}`}>
+            <div
+              className="event-click-area"
+              onClick={() => handleToggle("workshop")}
+            >
+              <div className="event-caption">EPISODE 2</div>
+
+              <div className="event-icon-wrapper">
+                <div className="event-icon">💡</div>
+              </div>
+
+              <h3 className="event-title">Workshops</h3>
+              <p className="event-subtitle">SKILL DEVELOPMENT</p>
+
+              <p className="event-description">
+                Through immersive technical events, we bridge the gap between
+                theory and real-world application. Students engage in hands-on
+                challenges, collaborate with peers, and learn from experienced
+                mentors in a fast-paced, practical environment.
+                <br /><br />
+                More than just learning, it’s about building skills, gaining
+                confidence, and turning knowledge into real impact. Where
+                curiosity evolves into capability and ideas grow into tangible
+                outcomes.
+              </p>
+            </div>
+
+            <div className="gallery-wrapper">
+              <div className="polaroid-gallery">
+                {[WS1, WS2, WS3, WS4].map((img, index) => (
+                  <div
+                    className="polaroid"
+                    key={index}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <img src={img} alt={`Workshop ${index + 1}`} />
+                    <p></p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
 }
 
 export default Events;

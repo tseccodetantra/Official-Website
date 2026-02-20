@@ -274,9 +274,10 @@ body {
     font-weight: 600;
 }
 
-/* ==============================================
-   EVENTS - Comic Strip Layout
-   ============================================== */
+/* ============================= */
+/* EVENTS SECTION */
+/* ============================= */
+
 .events {
     padding: 6rem 2rem;
     background: var(--comic-white);
@@ -298,11 +299,22 @@ body {
     line-height: 1.7;
 }
 
+/* .events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+} */
+
 .events-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
+    align-items: start; /* ← ADD THIS */
 }
+
+/* ============================= */
+/* EVENT CARD */
+/* ============================= */
 
 .event-card {
     background: var(--comic-bg);
@@ -311,12 +323,17 @@ body {
     box-shadow: 10px 10px 0 var(--comic-black);
     transition: all 0.3s ease;
     position: relative;
+    cursor: pointer;
 }
 
 .event-card:hover {
     transform: translate(-5px, -5px) rotate(-1deg);
     box-shadow: 15px 15px 0 var(--comic-black);
 }
+
+/* ============================= */
+/* CAPTION */
+/* ============================= */
 
 .event-caption {
     position: absolute;
@@ -334,9 +351,9 @@ body {
     background: #FFB3E6;
 }
 
-.event-card:nth-child(3) .event-caption {
-    background: #B3E6FF;
-}
+/* ============================= */
+/* ICON */
+/* ============================= */
 
 .event-icon-wrapper {
     width: 100px;
@@ -357,15 +374,13 @@ body {
     transform: rotate(5deg);
 }
 
-.event-card:nth-child(3) .event-icon-wrapper {
-    background: var(--comic-blue);
-    transform: rotate(-3deg);
-}
-
 .event-icon {
     font-size: 3rem;
-    filter: drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.3));
 }
+
+/* ============================= */
+/* TEXT */
+/* ============================= */
 
 .event-title {
     font-family: 'Bebas Neue', cursive;
@@ -389,48 +404,64 @@ body {
     font-weight: 600;
 }
 
-.event-features {
+/* ============================= */
+/* ACCORDION */
+/* ============================= */
+
+.gallery-wrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease;
+}
+
+.event-card.open .gallery-wrapper {
+    max-height: 1500px;
+    margin-top: 2rem;
+}
+
+/* ============================= */
+/* POLAROID GALLERY */
+/* ============================= */
+
+.polaroid-gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    margin-bottom: 2rem;
+    gap: 2rem;
 }
 
-.event-feature {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: 700;
+.polaroid {
+    background: white;
+    padding: 1rem 1rem 2rem;
+    border: 5px solid var(--comic-black);
+    box-shadow: 6px 6px 0 var(--comic-black);
+    transform: rotate(-3deg);
+    transition: 0.3s ease;
 }
 
-.event-feature::before {
-    content: '★';
-    color: var(--comic-orange);
-    font-size: 1.2rem;
+.polaroid:nth-child(2) { transform: rotate(4deg); }
+.polaroid:nth-child(3) { transform: rotate(-5deg); }
+.polaroid:nth-child(4) { transform: rotate(3deg); }
+
+.polaroid:hover {
+    transform: scale(1.05) rotate(0deg);
+    z-index: 5;
 }
 
-.event-cta {
-    display: inline-block;
-    background: var(--comic-black);
-    color: var(--comic-yellow);
-    padding: 0.75rem 2rem;
+.polaroid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
     border: 4px solid var(--comic-black);
-    font-family: 'Bebas Neue', cursive;
-    font-size: 1.2rem;
-    text-decoration: none;
-    letter-spacing: 2px;
-    box-shadow: 4px 4px 0 var(--comic-orange);
-    transition: all 0.2s ease;
 }
 
-.event-cta:hover {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0 var(--comic-orange);
+.polaroid p {
+    text-align: center;
+    margin-top: 0.8rem;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1rem;
 }
 
-.event-cta::after {
-    content: ' →';
-}
+
 
 /* ==============================================
    CTA - BOOM!
