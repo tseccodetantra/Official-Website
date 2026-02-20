@@ -1,121 +1,131 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Trophy, Lightbulb, Zap } from 'lucide-react';
-import './Events.css';
+import { useState } from "react";
 
-const Events = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef(null);
+// ✅ Import Hackathon Images
+import hackathon1 from "../assets/hackathon1.jpg";
+import hackathon2 from "../assets/hackathon2.jpg";
+import hackathon3 from "../assets/hackathon3.jpg";
+import hackathon4 from "../assets/hackathon4.jpg";
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.2 }
-    );
+// ✅ Import Workshop Images
+import WS1 from "../assets/WS1.jpeg";
+import WS2 from "../assets/WS2.jpeg";
+import WS3 from "../assets/WS3.jpeg";
+import WS4 from "../assets/WS4.jpeg";
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+function Events() {
+  const [activeCard, setActiveCard] = useState(null);
 
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
-  const events = [
-    {
-      icon: <Trophy />,
-      title: 'Hackathons',
-      subtitle: 'Need For Code Series',
-      description: 'Our flagship hackathon series where students collaborate, innovate, and build groundbreaking solutions to real-world problems. Experience intense coding marathons, mentorship from industry experts, and exciting prizes.',
-      highlights: ['24-48 Hour Sprints', 'Industry Mentors', 'Cash Prizes', 'Networking Opportunities'],
-      color: 'purple',
-      link: '/NFC-4.0/'
-    },
-    {
-      icon: <Lightbulb />,
-      title: 'Workshops',
-      subtitle: 'Skill Development',
-      description: 'Hands-on technical workshops covering cutting-edge technologies like Machine Learning, Web Development, Cloud Computing, and more. Learn from experienced professionals and gain practical skills.',
-      highlights: ['Expert Speakers', 'Live Coding Sessions', 'Certificates', 'Project-Based Learning'],
-      color: 'cyan'
-    },
-    {
-      icon: <Zap />,
-      title: 'Competitions',
-      subtitle: 'Coding Challenges',
-      description: 'Regular competitive programming contests, algorithm challenges, and coding competitions to sharpen your problem-solving skills and prepare for technical interviews.',
-      highlights: ['Weekly Contests', 'DSA Practice', 'Leaderboards', 'Interview Prep'],
-      color: 'pink'
-    }
-  ];
+  const handleToggle = (card) => {
+    setActiveCard((prev) => (prev === card ? null : card));
+  };
 
   return (
-    <section className={`events ${isVisible ? 'visible' : ''}`} id="events" ref={sectionRef}>
+    <section className="events" id="events">
       <div className="events-container">
-        <div className="section-header">
-          <h2 className="section-title">Our Events</h2>
-          <p className="section-subtitle">
-            Transforming learning into experience through immersive technical events
-          </p>
-        </div>
+        <h2 className="section-title">Our Events</h2>
+        <div className="section-underline"></div>
+
+                <p className="events-intro">
+                    Choose your battle! From code wars to robot rumbles, we've got challenges
+                    that'll push every tech warrior to their limits. 🔥
+                </p>
 
         <div className="events-grid">
-          {events.map((event, index) => (
-            <div 
-              key={index} 
-              className={`event-card event-${event.color}`}
-              style={{ animationDelay: `${index * 0.15}s` }}
+
+          {/* ================= HACKATHON ================= */}
+          <div className={`event-card ${activeCard === "hackathon" ? "open" : ""}`}>
+            <div
+              className="event-click-area"
+              onClick={() => handleToggle("hackathon")}
             >
-              <div className="event-header">
-                <div className="event-icon-wrapper">
-                  <div className="event-icon">
-                    {event.icon}
-                  </div>
-                </div>
-                <div className="event-title-group">
-                  <h3 className="event-title">{event.title}</h3>
-                  <p className="event-subtitle">{event.subtitle}</p>
-                </div>
+              <div className="event-caption">EPISODE 1</div>
+
+              <div className="event-icon-wrapper">
+                <div className="event-icon">🏆</div>
               </div>
 
-              <p className="event-description">{event.description}</p>
+              <h3 className="event-title">Hackathons</h3>
+              <p className="event-subtitle">NEED FOR CODE SERIES</p>
 
-              <div className="event-highlights">
-                {event.highlights.map((highlight, idx) => (
-                  <div key={idx} className="highlight-badge">
-                    <span className="highlight-dot"></span>
-                    {highlight}
+              <p className="event-description">
+                Our Flagship Hackathon Series - Need For Code is a high-impact
+                hackathon where students collaborate, innovate, and build
+                real-world solutions. Participants tackle industry-relevant
+                challenges, develop functional prototypes, and gain hands-on
+                experience with modern technologies — all in an intense,
+                fast-paced environment.
+                <br /><br />
+                More than just coding, it’s about teamwork, creativity, and
+                turning ideas into reality.
+              </p>
+            </div>
+
+            <div className="gallery-wrapper">
+              <div className="polaroid-gallery">
+                {[hackathon1, hackathon2, hackathon3, hackathon4].map(
+                  (img, index) => (
+                    <div
+                      className="polaroid"
+                      key={index}
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <img src={img} alt={`Hackathon ${index + 1}`} />
+                      <p></p>
+                    </div>
+                  )
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* ================= WORKSHOPS ================= */}
+          <div className={`event-card ${activeCard === "workshop" ? "open" : ""}`}>
+            <div
+              className="event-click-area"
+              onClick={() => handleToggle("workshop")}
+            >
+              <div className="event-caption">EPISODE 2</div>
+
+              <div className="event-icon-wrapper">
+                <div className="event-icon">💡</div>
+              </div>
+
+              <h3 className="event-title">Workshops</h3>
+              <p className="event-subtitle">SKILL DEVELOPMENT</p>
+
+              <p className="event-description">
+                Through immersive technical events, we bridge the gap between
+                theory and real-world application. Students engage in hands-on
+                challenges, collaborate with peers, and learn from experienced
+                mentors in a fast-paced, practical environment.
+                <br /><br />
+                More than just learning, it’s about building skills, gaining
+                confidence, and turning knowledge into real impact. Where
+                curiosity evolves into capability and ideas grow into tangible
+                outcomes.
+              </p>
+            </div>
+
+            <div className="gallery-wrapper">
+              <div className="polaroid-gallery">
+                {[WS1, WS2, WS3, WS4].map((img, index) => (
+                  <div
+                    className="polaroid"
+                    key={index}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <img src={img} alt={`Workshop ${index + 1}`} />
+                    <p></p>
                   </div>
                 ))}
               </div>
-
-              {event.link && (
-                <a href={event.link} className="event-link">
-                  Explore Now →
-                </a>
-              )}
             </div>
-          ))}
-        </div>
+          </div>
 
-        <div className="events-cta">
-          <h3 className="cta-title">Ready to Join the Revolution?</h3>
-          <p className="cta-description">
-            Become part of TSEC CodeTantra and embark on a journey of innovation, learning, and growth
-          </p>
-          <a href="/NFC-4.0/" className="glow-button">
-            Register for Need For Code 4.0
-          </a>
         </div>
       </div>
     </section>
   );
-};
+}
 
 export default Events;

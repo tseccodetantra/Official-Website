@@ -1,53 +1,79 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
-import './Navbar.css';
+import { useState } from "react";
+import './navbar.css';
+import './navbar-enhancements.css';
 
-const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+function Navbar() {
+    const [open, setOpen] = useState(false);
+    const [hoveredLink, setHoveredLink] = useState(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    return (
+        <nav>
+            {/* Comic corner decorations */}
+            <div className="nav-corner corner-left">⚡</div>
+            <div className="nav-corner corner-right">⚡</div>
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+            <div className="nav-container">
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false);
-    }
-  };
+                <div className="logo">
+                    <div className="logo-icon">
+                        CT
+                        <span className="logo-spark"></span>
+                    </div>
+                    <div className="logo-text">
+                        CodeTantra
+                        <span className="logo-underline"></span>
+                    </div>
+                </div>
 
-  return (
-    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="navbar-container">
-        <div className="navbar-logo" onClick={() => scrollToSection('home')}>
-          <img src="/logo.png" alt="CodeTantra Logo" className="logo-icon" />
-          <span className="logo-text">CodeTantra</span>
-        </div>
+                <ul className={`nav-links ${open ? "active" : ""}`}>
+                    <li
+                        onMouseEnter={() => setHoveredLink('home')}
+                        onMouseLeave={() => setHoveredLink(null)}
+                    >
+                        <a href="#home">
+                            HOME
+                            {hoveredLink === 'home' && <span className="link-burst">POP!</span>}
+                        </a>
+                    </li>
+                    <li
+                        onMouseEnter={() => setHoveredLink('about')}
+                        onMouseLeave={() => setHoveredLink(null)}
+                    >
+                        <a href="#about">
+                            ABOUT
+                            {hoveredLink === 'about' && <span className="link-burst">ZAP!</span>}
+                        </a>
+                    </li>
+                    <li
+                        onMouseEnter={() => setHoveredLink('events')}
+                        onMouseLeave={() => setHoveredLink(null)}
+                    >
+                        <a href="#events">
+                            EVENTS
+                            {hoveredLink === 'events' && <span className="link-burst">BAM!</span>}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" className="nav-cta">
+                            <span className="cta-icon">⚡</span>
+                            NEED FOR CODE 4.0
+                            <span className="cta-glow"></span>
+                        </a>
+                    </li>
+                </ul>
 
-        <div className={`navbar-links ${isMobileMenuOpen ? 'active' : ''}`}>
-          <a onClick={() => scrollToSection('home')} className="nav-link">Home</a>
-          <a onClick={() => scrollToSection('about')} className="nav-link">About</a>
-          <a onClick={() => scrollToSection('events')} className="nav-link">Events</a>
-          <a href="/NFC-4.0/" className="nav-link highlight">Need For Code 4.0</a>
-        </div>
+                <div
+                    className={`menu-toggle ${open ? "active" : ""}`}
+                    onClick={() => setOpen(!open)}
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
 
-        <button 
-          className="mobile-menu-toggle"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {isMobileMenuOpen ? <X /> : <Menu />}
-        </button>
-      </div>
-    </nav>
-  );
-};
+            </div>
+        </nav>
+    );
+}
 
 export default Navbar;

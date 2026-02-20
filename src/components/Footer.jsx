@@ -1,90 +1,62 @@
-import React from 'react';
-import { Github, Linkedin, Mail, Instagram } from 'lucide-react';
-import './Footer.css';
+function Footer() {
+    return (
+        <footer>
+            <div className="footer-container">
+                <div>
+                    <div className="footer-logo">
+                        <div className="footer-logo-icon">CT</div>
+                        <div className="footer-logo-text">CODETANTRA</div>
+                    </div>
+                    <p className="footer-description">
+                        TSEC Technical Committee's annual tech extravaganza.
+                        Where legends are coded and champions are born!
+                    </p>
+                    <div className="footer-social">
+                        <a href="#" className="social-icon">📘</a>
+                        <a href="#" className="social-icon">📸</a>
+                        <a href="#" className="social-icon">🐦</a>
+                        <a href="#" className="social-icon">💼</a>
+                    </div>
+                </div>
 
-const Footer = () => {
-  const currentYear = new Date().getFullYear();
+                <div className="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul className="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#">Schedule</a></li>
+                        <li><a href="#">Sponsors</a></li>
+                    </ul>
+                </div>
 
-  const socialLinks = [
-    { icon: <Instagram />, url: '#', label: 'Instagram' },
-    { icon: <Linkedin />, url: '#', label: 'LinkedIn' },
-    { icon: <Github />, url: '#', label: 'GitHub' },
-    { icon: <Mail />, url: '#', label: 'Email' }
-  ];
+                <div className="footer-section">
+                    <h3>Events</h3>
+                    <ul className="footer-links">
+                        <li><a href="#">Hackathon</a></li>
+                        <li><a href="#">Code Hunt</a></li>
+                        <li><a href="#">Robo Wars</a></li>
+                        <li><a href="#">AI Challenge</a></li>
+                        <li><a href="#">Design Battle</a></li>
+                    </ul>
+                </div>
 
-  const quickLinks = [
-    { name: 'About Us', href: '#about' },
-    { name: 'Events', href: '#events' },
-    { name: 'Need For Code', href: '/NFC-4.0/' },
-    { name: 'Contact', href: '#contact' }
-  ];
-
-  return (
-    <footer className="footer">
-      <div className="footer-container">
-        <div className="footer-content">
-          <div className="footer-brand">
-            <div className="footer-logo">
-              <img src="/logo.png" alt="CodeTantra Logo" className="footer-logo-icon" />
-              <span className="footer-logo-text">CodeTantra</span>
+                <div className="footer-section footer-contact">
+                    <h3>Contact Us</h3>
+                    <p>📍 TSEC, Mumbai</p>
+                    <p>📞 +91 98765 43210</p>
+                    <p>🕐 Mon–Fri: 9AM – 6PM</p>
+                    <a href="mailto:tantra@tsec.edu" className="footer-email">
+                        📧 tantra@tsec.edu
+                    </a>
+                </div>
             </div>
-            <p className="footer-tagline">
-              Empowering tomorrow's innovators through code, creativity, and collaboration
-            </p>
-            <div className="footer-social">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.url}
-                  className="social-link"
-                  aria-label={social.label}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {social.icon}
-                </a>
-              ))}
+
+            <div className="footer-bottom">
+                Made with <span className="footer-heart">❤️</span> by TSEC Technical Committee © 2025
             </div>
-          </div>
-
-          <div className="footer-links">
-            <h4 className="footer-heading">Quick Links</h4>
-            <ul className="links-list">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <a href={link.href} className="footer-link">
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="footer-contact">
-            <h4 className="footer-heading">Get In Touch</h4>
-            <div className="contact-info">
-              <p>Thadomal Shahani Engineering College</p>
-              <p>AI & Data Science Department</p>
-              <p>Mumbai, Maharashtra</p>
-              <a href="mailto:codetantra@tsec.edu" className="contact-email">
-                codetantra@tsec.edu
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div className="footer-bottom">
-          <div className="footer-divider"></div>
-          <div className="footer-copyright">
-            <p>&copy; {currentYear} TSEC CodeTantra. All rights reserved.</p>
-            <p className="made-with">
-              Made with <span className="heart">♥</span> by CodeTantra Team
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-};
+        </footer>
+    );
+}
 
 export default Footer;

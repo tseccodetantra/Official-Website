@@ -1,112 +1,78 @@
-import React, { useEffect, useState } from 'react';
-import { ChevronDown, Sparkles } from 'lucide-react';
-import './Hero.css';
+import './hero.css';
 
-const Hero = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+function Hero() {
+    return (
+        <section className="hero" id="home">
+            {/* Halftone overlays */}
+            <div className="halftone-overlay halftone-main"></div>
+            <div className="halftone-overlay halftone-cyan"></div>
+            <div className="halftone-overlay halftone-magenta"></div>
 
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePosition({ 
-        x: (e.clientX / window.innerWidth) - 0.5,
-        y: (e.clientY / window.innerHeight) - 0.5
-      });
-    };
+            {/* Speed lines */}
+            <div className="speed-lines"></div>
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+            {/* Burst background */}
+            <div className="hero-burst"></div>
 
-  const scrollToAbout = () => {
-    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
-  };
+            {/* Action lines */}
+            <div className="action-lines"></div>
 
-  return (
-    <section className="hero" id="home">
-      <div className="hero-background">
-        <div 
-          className="hero-glow hero-glow-1"
-          style={{
-            transform: `translate(${mousePosition.x * 50}px, ${mousePosition.y * 50}px)`
-          }}
-        />
-        <div 
-          className="hero-glow hero-glow-2"
-          style={{
-            transform: `translate(${-mousePosition.x * 30}px, ${-mousePosition.y * 30}px)`
-          }}
-        />
-        <div 
-          className="hero-glow hero-glow-3"
-          style={{
-            transform: `translate(${mousePosition.x * 40}px, ${mousePosition.y * 40}px)`
-          }}
-        />
-      </div>
+            {/* Sound effect bursts */}
+            <div className="comic-burst burst-1">POW!</div>
+            <div className="comic-burst burst-2">WHAM!</div>
+            <div className="comic-burst burst-3">BOOM!</div>
+            <div className="comic-burst burst-zap">ZAP!</div>
+            <div className="comic-burst burst-crack">CRACK!</div>
 
-      {/* Floating Logo Elements */}
-      <div className="floating-logos">
-        <img src="/logo.png" alt="" className="floating-logo floating-logo-1" />
-        <img src="/logo.png" alt="" className="floating-logo floating-logo-2" />
-        <img src="/logo.png" alt="" className="floating-logo floating-logo-3" />
-        <img src="/logo.png" alt="" className="floating-logo floating-logo-4" />
-        <img src="/logo.png" alt="" className="floating-logo floating-logo-5" />
-        <img src="/logo.png" alt="" className="floating-logo floating-logo-6" />
-        <img src="/logo.png" alt="" className="floating-logo floating-logo-7" />
-        <img src="/logo.png" alt="" className="floating-logo floating-logo-8" />
-      </div>
+            {/* Mini floating effects */}
+            <div className="mini-effect effect-whoosh">whoosh</div>
+            <div className="mini-effect effect-zoom">zoom</div>
 
-      <div className="hero-container">
-        <div className="hero-content">
-          <div className="hero-badge">
-            <Sparkles className="badge-icon" />
-            <span>TSEC Technical Committee</span>
-          </div>
+            {/* Floating code symbols */}
+            <div className="code-symbol symbol-1">{"{}"}</div>
+            <div className="code-symbol symbol-2">{"<>"}</div>
 
-          <h1 className="hero-title">
-            <span className="title-line">Welcome to</span>
-            <span className="title-main">CodeTantra</span>
-            <span className="title-underline"></span>
-          </h1>
+            {/* Energy sparks */}
+            <div className="energy-spark spark-1"></div>
+            <div className="energy-spark spark-2"></div>
+            <div className="energy-spark spark-3"></div>
 
-          <p className="hero-description">
-            Empowering students through innovative workshops, competitive hackathons, 
-            and programming excellence at Thadomal Shahani Engineering College
-          </p>
+            {/* Floating stars */}
+            <div className="floating-star star-1">★</div>
+            <div className="floating-star star-2">★</div>
+            <div className="floating-star star-3">★</div>
+            <div className="floating-star star-4">★</div>
 
-          <div className="hero-cta">
-            <a href="/NFC-4.0/" className="glow-button">
-              Explore Need For Code 4.0
-            </a>
-            <button className="secondary-button" onClick={scrollToAbout}>
-              Learn More
-            </button>
-          </div>
+            {/* Main hero content — no box/border */}
+            <div className="hero-content">
+                <div className="hero-badge">✦ TSEC TECHNICAL COMMITTEE</div>
+                <div className="hero-subtitle">Welcome to</div>
 
-          <div className="hero-stats">
-            <div className="stat-item">
-              <div className="stat-number">1000+</div>
-              <div className="stat-label">Students Reached</div>
+                <div className="title-wrapper">
+                    <div className="hero-title-shadow">CODETANTRA</div>
+                    <h1 className="hero-title">CODETANTRA</h1>
+                </div>
+
+                <div className="hero-underline"></div>
+
+                <p className="hero-description">
+                    Empowering students through innovative workshops, competitive
+                    hackathons, and programming excellence
+                </p>
+
+                <div className="hero-buttons">
+                    <a href="#events" className="btn-primary">
+                        <span className="btn-glow"></span>
+                        ⚡ ACTIVATE HACK MODE
+                    </a>
+                    <a href="#about" className="btn-secondary">
+                        <span className="btn-glow"></span>
+                        💻 KNOW MORE
+                    </a>
+                </div>
             </div>
-            <div className="stat-divider"></div>
-            <div className="stat-item">
-              <div className="stat-number">50+</div>
-              <div className="stat-label">Events Conducted</div>
-            </div>
-            <div className="stat-divider"></div>
-            <div className="stat-item">
-              <div className="stat-number">4</div>
-              <div className="stat-label">Years of Excellence</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="scroll-indicator" onClick={scrollToAbout}>
-          <ChevronDown className="scroll-icon" />
-        </div>
-      </div>
-    </section>
-  );
-};
+        </section>
+    );
+}
 
 export default Hero;
