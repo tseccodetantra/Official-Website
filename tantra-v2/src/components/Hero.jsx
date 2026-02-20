@@ -1,32 +1,78 @@
+import './hero.css';
+
 function Hero() {
-  return (
-    <section className="hero" id="home">
+    return (
+        <section className="hero" id="home">
+            {/* Halftone overlays */}
+            <div className="halftone-overlay halftone-main"></div>
+            <div className="halftone-overlay halftone-cyan"></div>
+            <div className="halftone-overlay halftone-magenta"></div>
 
-      <div className="hero-burst"></div>
+            {/* Speed lines */}
+            <div className="speed-lines"></div>
 
-      <div className="hero-content">
+            {/* Burst background */}
+            <div className="hero-burst"></div>
 
-        <div className="hero-badge">✦ TSEC TECHNICAL COMMITTEE</div>
+            {/* Action lines */}
+            <div className="action-lines"></div>
 
-        <p className="hero-subtitle">Welcome to</p>
+            {/* Sound effect bursts */}
+            <div className="comic-burst burst-1">POW!</div>
+            <div className="comic-burst burst-2">WHAM!</div>
+            <div className="comic-burst burst-3">BOOM!</div>
+            <div className="comic-burst burst-zap">ZAP!</div>
+            <div className="comic-burst burst-crack">CRACK!</div>
 
-        <h1 className="hero-title">CodeTantra</h1>
+            {/* Mini floating effects */}
+            <div className="mini-effect effect-whoosh">whoosh</div>
+            <div className="mini-effect effect-zoom">zoom</div>
 
-        <div className="hero-underline"></div>
+            {/* Floating code symbols */}
+            <div className="code-symbol symbol-1">{"{}"}</div>
+            <div className="code-symbol symbol-2">{"<>"}</div>
 
-        <p className="hero-description">
-          Empowering students through innovative workshops, competitive hackathons,
-          and programming excellence
-        </p>
+            {/* Energy sparks */}
+            <div className="energy-spark spark-1"></div>
+            <div className="energy-spark spark-2"></div>
+            <div className="energy-spark spark-3"></div>
 
-        <div className="hero-buttons">
-          <a href="#" className="btn-primary">EXPLORE NEED FOR CODE 4.0</a>
-          <a href="#about" className="btn-secondary">LEARN MORE</a>
-        </div>
+            {/* Floating stars */}
+            <div className="floating-star star-1">★</div>
+            <div className="floating-star star-2">★</div>
+            <div className="floating-star star-3">★</div>
+            <div className="floating-star star-4">★</div>
 
-      </div>
-    </section>
-  );
+            {/* Main hero content — no box/border */}
+            <div className="hero-content">
+                <div className="hero-badge">✦ TSEC TECHNICAL COMMITTEE</div>
+                <div className="hero-subtitle">Welcome to</div>
+
+                <div className="title-wrapper">
+                    <div className="hero-title-shadow">CODETANTRA</div>
+                    <h1 className="hero-title">CODETANTRA</h1>
+                </div>
+
+                <div className="hero-underline"></div>
+
+                <p className="hero-description">
+                    Empowering students through innovative workshops, competitive
+                    hackathons, and programming excellence
+                </p>
+
+                <div className="hero-buttons">
+                    <a href="#events" className="btn-primary">
+                        <span className="btn-glow"></span>
+                        ⚡ ACTIVATE HACK MODE
+                    </a>
+                    <a href="#about" className="btn-secondary">
+                        <span className="btn-glow"></span>
+                        💻 KNOW MORE
+                    </a>
+                </div>
+            </div>
+        </section>
+    );
 }
 
 export default Hero;

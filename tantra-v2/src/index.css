@@ -1,3 +1,6 @@
+/* ==============================================
+   GLOBAL TOKENS & RESETS
+   ============================================== */
 :root {
     --comic-yellow: #FFD700;
     --comic-orange: #FF9500;
@@ -34,6 +37,7 @@ body {
     z-index: 9999;
 }
 
+<<<<<<< HEAD
 /* Navigation Comic Strip Style */
 nav {
     position: sticky;
@@ -333,6 +337,11 @@ nav {
 }
 
 /* Stats Comic Panels */
+=======
+/* ==============================================
+   STATS - Comic Panels
+   ============================================== */
+>>>>>>> parthavi2
 .stats {
     background: var(--comic-white);
     padding: 4rem 2rem;
@@ -403,6 +412,7 @@ nav {
     letter-spacing: 2px;
 }
 
+<<<<<<< HEAD
 /* About Section - Comic Book Page */
 .about {
     padding: 6rem 2rem;
@@ -421,6 +431,20 @@ nav {
             transparent 1px,
             transparent 30px
         );
+=======
+/* ==============================================
+   ABOUT - Comic Book Page
+   ============================================== */
+.about {
+    padding: 6rem 2rem;
+    background:
+        repeating-linear-gradient(90deg,
+            var(--comic-bg) 0px, var(--comic-bg) 1px,
+            transparent 1px, transparent 30px),
+        repeating-linear-gradient(0deg,
+            var(--comic-bg) 0px, var(--comic-bg) 1px,
+            transparent 1px, transparent 30px);
+>>>>>>> parthavi2
     background-color: #FFF5E6;
 }
 
@@ -448,7 +472,10 @@ nav {
     box-shadow: 4px 4px 0 var(--comic-black);
 }
 
+<<<<<<< HEAD
 /* Comic Text Box */
+=======
+>>>>>>> parthavi2
 .about-content {
     background: var(--comic-white);
     border: 6px solid var(--comic-black);
@@ -508,7 +535,10 @@ nav {
     background: #B3E6FF;
 }
 
+<<<<<<< HEAD
 /* Focus Grid - Comic Panels */
+=======
+>>>>>>> parthavi2
 .focus-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -575,7 +605,13 @@ nav {
     font-weight: 600;
 }
 
+<<<<<<< HEAD
 /* Events Section - Comic Strip Layout */
+=======
+/* ==============================================
+   EVENTS - Comic Strip Layout
+   ============================================== */
+>>>>>>> parthavi2
 .events {
     padding: 6rem 2rem;
     background: var(--comic-white);
@@ -617,7 +653,10 @@ nav {
     box-shadow: 15px 15px 0 var(--comic-black);
 }
 
+<<<<<<< HEAD
 /* Caption Box */
+=======
+>>>>>>> parthavi2
 .event-caption {
     position: absolute;
     top: -15px;
@@ -732,11 +771,20 @@ nav {
     content: ' →';
 }
 
+<<<<<<< HEAD
 /* CTA Section - BOOM! */
 .cta {
     padding: 8rem 2rem;
     background: 
         radial-gradient(circle at 50% 50%, var(--comic-orange) 0%, var(--comic-yellow) 100%);
+=======
+/* ==============================================
+   CTA - BOOM!
+   ============================================== */
+.cta {
+    padding: 8rem 2rem;
+    background: radial-gradient(circle at 50% 50%, var(--comic-orange) 0%, var(--comic-yellow) 100%);
+>>>>>>> parthavi2
     position: relative;
     overflow: hidden;
     border-bottom: 8px solid var(--comic-black);
@@ -749,13 +797,20 @@ nav {
     left: 0;
     right: 0;
     bottom: 0;
+<<<<<<< HEAD
     background-image: 
         radial-gradient(circle, var(--comic-black) 3px, transparent 3px);
+=======
+    background-image: radial-gradient(circle, var(--comic-black) 3px, transparent 3px);
+>>>>>>> parthavi2
     background-size: 30px 30px;
     opacity: 0.1;
 }
 
+<<<<<<< HEAD
 /* Starburst */
+=======
+>>>>>>> parthavi2
 .cta::after {
     content: '';
     position: absolute;
@@ -763,6 +818,7 @@ nav {
     left: 50%;
     width: 600px;
     height: 600px;
+<<<<<<< HEAD
     background: 
         repeating-conic-gradient(
             from 0deg,
@@ -772,6 +828,22 @@ nav {
     transform: translate(-50%, -50%);
     opacity: 0.1;
     animation: rotate 30s linear infinite;
+=======
+    background: repeating-conic-gradient(from 0deg, var(--comic-red) 0deg 10deg, transparent 10deg 20deg);
+    transform: translate(-50%, -50%);
+    opacity: 0.1;
+    animation: ctaRotate 30s linear infinite;
+}
+
+@keyframes ctaRotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+>>>>>>> parthavi2
 }
 
 .cta-content {
@@ -786,18 +858,38 @@ nav {
     font-family: 'Bangers', cursive;
     font-size: clamp(3rem, 8vw, 7rem);
     color: var(--comic-white);
+<<<<<<< HEAD
     text-shadow: 
         6px 6px 0 var(--comic-black),
         12px 12px 0 var(--comic-red);
+=======
+    text-shadow: 6px 6px 0 var(--comic-black), 12px 12px 0 var(--comic-red);
+>>>>>>> parthavi2
     margin-bottom: 2rem;
     transform: rotate(-3deg);
     animation: shake 2s ease-in-out infinite;
 }
 
 @keyframes shake {
+<<<<<<< HEAD
     0%, 100% { transform: rotate(-3deg); }
     25% { transform: rotate(-4deg); }
     75% { transform: rotate(-2deg); }
+=======
+
+    0%,
+    100% {
+        transform: rotate(-3deg);
+    }
+
+    25% {
+        transform: rotate(-4deg);
+    }
+
+    75% {
+        transform: rotate(-2deg);
+    }
+>>>>>>> parthavi2
 }
 
 .cta-description {
@@ -833,6 +925,7 @@ nav {
     box-shadow: 0 0 0 var(--comic-black);
 }
 
+<<<<<<< HEAD
 /* Footer Neobrutalism Style */
 footer {
     background: #ffd700;
@@ -840,6 +933,15 @@ footer {
     padding: 4rem 2rem 2rem;
     border-top: 8px solid var(--comic-black);
     position: relative;
+=======
+/* ==============================================
+   FOOTER - Comic Style
+   ============================================== */
+footer {
+    background: var(--comic-black);
+    color: var(--comic-white);
+    padding: 4rem 2rem 2rem;
+>>>>>>> parthavi2
 }
 
 .footer-container {
@@ -849,8 +951,11 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 3rem;
     margin-bottom: 3rem;
+<<<<<<< HEAD
     position: relative;
     z-index: 1;
+=======
+>>>>>>> parthavi2
 }
 
 .footer-logo {
@@ -861,15 +966,24 @@ footer {
 }
 
 .footer-logo-icon {
+<<<<<<< HEAD
     width: 60px;
     height: 60px;
     background: var(--comic-black);
     border: 5px solid var(--comic-black);
     border-radius: 0;
+=======
+    width: 50px;
+    height: 50px;
+    background: var(--comic-orange);
+    border: 4px solid var(--comic-white);
+    border-radius: 10px;
+>>>>>>> parthavi2
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'Bangers', cursive;
+<<<<<<< HEAD
     font-size: 1.8rem;
     color: var(--comic-yellow);
     box-shadow: 6px 6px 0 var(--comic-black);
@@ -880,26 +994,42 @@ footer {
 .footer-logo-icon:hover {
     transform: rotate(0deg) translate(-2px, -2px);
     box-shadow: 8px 8px 0 var(--comic-black);
+=======
+    font-size: 1.5rem;
+    color: var(--comic-black);
+    box-shadow: 4px 4px 0 var(--comic-orange);
+>>>>>>> parthavi2
 }
 
 .footer-logo-text {
     font-family: 'Bangers', cursive;
+<<<<<<< HEAD
     font-size: 2rem;
     color: var(--comic-black);
     text-shadow: 3px 3px 0 var(--comic-orange);
+=======
+    font-size: 1.8rem;
+    color: var(--comic-orange);
+    text-shadow: 2px 2px 0 var(--comic-white);
+>>>>>>> parthavi2
 }
 
 .footer-description {
     font-size: 1.1rem;
     line-height: 1.7;
     margin-bottom: 1.5rem;
+<<<<<<< HEAD
     font-weight: 700;
     color: var(--comic-black);
+=======
+    font-weight: 600;
+>>>>>>> parthavi2
 }
 
 .footer-social {
     display: flex;
     gap: 1rem;
+<<<<<<< HEAD
     flex-wrap: wrap;
 }
 
@@ -915,17 +1045,39 @@ footer {
     font-size: 1.6rem;
     text-decoration: none;
     box-shadow: 5px 5px 0 var(--comic-black);
+=======
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--comic-yellow);
+    border: 4px solid var(--comic-white);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+    box-shadow: 4px 4px 0 var(--comic-orange);
+>>>>>>> parthavi2
     transition: all 0.2s ease;
 }
 
 .social-icon:hover {
+<<<<<<< HEAD
     transform: translate(3px, 3px);
     box-shadow: 2px 2px 0 var(--comic-black);
     background: var(--comic-orange);
+=======
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--comic-orange);
+>>>>>>> parthavi2
 }
 
 .footer-section h3 {
     font-family: 'Bebas Neue', cursive;
+<<<<<<< HEAD
     font-size: 2rem;
     margin-bottom: 1.5rem;
     color: var(--comic-black);
@@ -936,6 +1088,12 @@ footer {
     box-shadow: 4px 4px 0 var(--comic-black);
     display: inline-block;
     transform: rotate(-1deg);
+=======
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--comic-yellow);
+    letter-spacing: 2px;
+>>>>>>> parthavi2
 }
 
 .footer-links {
@@ -946,6 +1104,7 @@ footer {
 }
 
 .footer-links a {
+<<<<<<< HEAD
     color: var(--comic-black);
     text-decoration: none;
     font-weight: 700;
@@ -987,10 +1146,22 @@ footer {
     box-shadow: 4px 4px 0 var(--comic-black);
     display: inline-block;
     transform: rotate(-1deg);
+=======
+    color: var(--comic-white);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--comic-yellow);
+>>>>>>> parthavi2
 }
 
 .footer-contact p {
     margin-bottom: 0.75rem;
+<<<<<<< HEAD
     font-weight: 700;
     font-size: 1.05rem;
     color: var(--comic-black);
@@ -1010,18 +1181,41 @@ footer {
     display: inline-block;
     margin-top: 1rem;
     box-shadow: 6px 6px 0 var(--comic-black);
+=======
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+.footer-email {
+    background: var(--comic-orange);
+    color: var(--comic-black);
+    padding: 0.75rem 1.5rem;
+    border: 4px solid var(--comic-white);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+    margin-top: 1rem;
+    box-shadow: 4px 4px 0 var(--comic-yellow);
+>>>>>>> parthavi2
     transition: all 0.2s ease;
 }
 
 .footer-email:hover {
+<<<<<<< HEAD
     transform: translate(3px, 3px);
     box-shadow: 3px 3px 0 var(--comic-black);
     background: var(--comic-orange);
     color: var(--comic-black);
+=======
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--comic-yellow);
+>>>>>>> parthavi2
 }
 
 .footer-bottom {
     padding-top: 2rem;
+<<<<<<< HEAD
     border-top: 6px solid var(--comic-black);
     text-align: center;
     font-family: 'Permanent Marker', cursive;
@@ -1029,6 +1223,12 @@ footer {
     color: var(--comic-black);
     position: relative;
     z-index: 1;
+=======
+    border-top: 4px solid var(--comic-white);
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.1rem;
+>>>>>>> parthavi2
 }
 
 .footer-heart {
@@ -1038,17 +1238,39 @@ footer {
 }
 
 @keyframes heartBeat {
+<<<<<<< HEAD
     0%, 100% { transform: scale(1); }
     25% { transform: scale(1.3); }
     50% { transform: scale(1); }
 }
 
 /* Responsive */
+=======
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.3);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+}
+
+/* ==============================================
+   RESPONSIVE
+   ============================================== */
+>>>>>>> parthavi2
 @media (max-width: 768px) {
     .comic-frame {
         border-width: 8px;
     }
 
+<<<<<<< HEAD
     .nav-links {
         position: fixed;
         top: 90px;
@@ -1091,6 +1313,8 @@ footer {
         width: 200px;
     }
 
+=======
+>>>>>>> parthavi2
     .events-grid {
         grid-template-columns: 1fr;
     }
@@ -1102,6 +1326,7 @@ footer {
     .footer-container {
         grid-template-columns: 1fr;
     }
+<<<<<<< HEAD
 }
 
 /* 🚀 Rocket Animation */
@@ -1384,3 +1609,6 @@ footer {
       0 0 12px rgba(255,165,0,0.6);
   }
     
+=======
+}
+>>>>>>> parthavi2

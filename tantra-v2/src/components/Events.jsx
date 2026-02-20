@@ -1,111 +1,79 @@
 function Events() {
-  return (
-    <section className="events" id="events">
+    return (
+        <section className="events" id="events">
+            <div className="events-container">
+                <h2 className="section-title">Epic Events</h2>
+                <div className="section-underline"></div>
 
-      <div className="events-container">
+                <p className="events-intro">
+                    Choose your battle! From code wars to robot rumbles, we've got challenges
+                    that'll push every tech warrior to their limits. 🔥
+                </p>
 
-        <h2 className="section-title">Our Events</h2>
-        <div className="section-underline"></div>
+                <div className="events-grid">
+                    <div className="event-card">
+                        <div className="event-caption">MAIN EVENT</div>
+                        <div className="event-icon-wrapper">
+                            <div className="event-icon">⚡</div>
+                        </div>
+                        <h3 className="event-title">HACKATHON</h3>
+                        <div className="event-subtitle">24 Hours of Pure Code</div>
+                        <p className="event-description">
+                            The ultimate coding marathon where teams race against time to build
+                            innovative solutions to real-world problems. No sleep, all code!
+                        </p>
+                        <div className="event-features">
+                            <div className="event-feature">24 Hours Non-Stop</div>
+                            <div className="event-feature">Team of 3-4</div>
+                            <div className="event-feature">₹50,000 Prize</div>
+                            <div className="event-feature">Industry Mentors</div>
+                        </div>
+                        <a href="#" className="event-cta">Register Now</a>
+                    </div>
 
-        <p className="events-intro">
-          Transforming learning into experience through immersive technical events
-        </p>
+                    <div className="event-card">
+                        <div className="event-caption">FUN ROUND</div>
+                        <div className="event-icon-wrapper">
+                            <div className="event-icon">🎯</div>
+                        </div>
+                        <h3 className="event-title">CODE HUNT</h3>
+                        <div className="event-subtitle">Debug the Mystery</div>
+                        <p className="event-description">
+                            A thrilling scavenger hunt where clues are hidden in code snippets.
+                            Decode, solve, and race to the finish line!
+                        </p>
+                        <div className="event-features">
+                            <div className="event-feature">3 Hour Rounds</div>
+                            <div className="event-feature">Solo or Pairs</div>
+                            <div className="event-feature">₹20,000 Prize</div>
+                            <div className="event-feature">All Languages</div>
+                        </div>
+                        <a href="#" className="event-cta">Register Now</a>
+                    </div>
 
-        <div className="events-grid">
-
-          {/* HACKATHON */}
-          <div className="event-card">
-
-            <div className="event-caption">EPISODE 1</div>
-
-            <div className="event-icon-wrapper">
-              <div className="event-icon">🏆</div>
+                    <div className="event-card">
+                        <div className="event-caption">MEGA EVENT</div>
+                        <div className="event-icon-wrapper">
+                            <div className="event-icon">🤖</div>
+                        </div>
+                        <h3 className="event-title">ROBO WARS</h3>
+                        <div className="event-subtitle">Battle of the Bots</div>
+                        <p className="event-description">
+                            Engineer your ultimate battle robot and crush the competition in
+                            a spectacular arena of steel, sparks, and strategy!
+                        </p>
+                        <div className="event-features">
+                            <div className="event-feature">Weight Classes</div>
+                            <div className="event-feature">Team of 2-5</div>
+                            <div className="event-feature">₹30,000 Prize</div>
+                            <div className="event-feature">Open Arena</div>
+                        </div>
+                        <a href="#" className="event-cta">Register Now</a>
+                    </div>
+                </div>
             </div>
-
-            <h3 className="event-title">Hackathons</h3>
-
-            <p className="event-subtitle">NEED FOR CODE SERIES</p>
-
-            <p className="event-description">
-              Our flagship hackathon series where students collaborate, innovate,
-              and build groundbreaking solutions to real-world problems.
-              Experience intense coding marathons, mentorship from industry experts,
-              and exciting prizes.
-            </p>
-
-            <div className="event-features">
-              <div className="event-feature">24-48 Hour Sprints</div>
-              <div className="event-feature">Industry Mentors</div>
-              <div className="event-feature">Cash Prizes</div>
-              <div className="event-feature">Networking Opportunities</div>
-            </div>
-
-            <a href="#" className="event-cta">EXPLORE NOW</a>
-          </div>
-
-          {/* WORKSHOPS */}
-          <div className="event-card">
-
-            <div className="event-caption">EPISODE 2</div>
-
-            <div className="event-icon-wrapper">
-              <div className="event-icon">💡</div>
-            </div>
-
-            <h3 className="event-title">Workshops</h3>
-
-            <p className="event-subtitle">SKILL DEVELOPMENT</p>
-
-            <p className="event-description">
-              Hands-on technical workshops covering cutting-edge technologies
-              like Machine Learning, Web Development, Cloud Computing, and more.
-              Learn from experienced professionals and gain practical skills.
-            </p>
-
-            <div className="event-features">
-              <div className="event-feature">Expert Speakers</div>
-              <div className="event-feature">Live Coding Sessions</div>
-              <div className="event-feature">Certificates</div>
-              <div className="event-feature">Project-Based Learning</div>
-            </div>
-
-            <a href="#" className="event-cta">EXPLORE NOW</a>
-          </div>
-
-          {/* COMPETITIONS */}
-          <div className="event-card">
-
-            <div className="event-caption">EPISODE 3</div>
-
-            <div className="event-icon-wrapper">
-              <div className="event-icon">⚡</div>
-            </div>
-
-            <h3 className="event-title">Competitions</h3>
-
-            <p className="event-subtitle">CODING CHALLENGES</p>
-
-            <p className="event-description">
-              Regular competitive programming contests, algorithm challenges,
-              and coding competitions to sharpen your problem-solving skills
-              and prepare for technical interviews.
-            </p>
-
-            <div className="event-features">
-              <div className="event-feature">Weekly Contests</div>
-              <div className="event-feature">DSA Practice</div>
-              <div className="event-feature">Leaderboards</div>
-              <div className="event-feature">Interview Prep</div>
-            </div>
-
-            <a href="#" className="event-cta">EXPLORE NOW</a>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-  );
+        </section>
+    );
 }
 
 export default Events;

@@ -7,19 +7,18 @@ import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 
 function App() {
-  return (
-    <>
-      <div className="comic-frame"></div>
-
-      <Navbar />
-      <Hero />
-      <Stats />
-      <About />
-      <Events />
-      <CTA />
-      <Footer />
-    </>
-  );
+    return (
+        <>
+            <div className="comic-frame"></div>
+            <Navbar />
+            <Hero />
+            <Stats />
+            <About />
+            <Events />
+            <CTA />
+            <Footer />
+        </>
+    );
 }
 
 export default App;
