@@ -5,6 +5,7 @@ import About from "./components/About";
 import Events from "./components/Events";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
+import ImageFlow from './components/ImageFlow';
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
             <About />
             <Events />
             <CTA />
+            <ImageFlow/>
             <Footer />
         </>
     );
