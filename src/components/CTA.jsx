@@ -7,7 +7,7 @@ function CTA() {
                     Join hundreds of tech warriors at TANTRA 4.0 — the most explosive
                     technical festival Mumbai has ever seen! Register now before spots run out!
                 </p>
-                <a href="#" className="cta-button">⚡ REGISTER NOW ⚡</a>
+                <a href="#" className="cta-button"> REGISTER NOW </a>
             </div>
         </section>
     );
