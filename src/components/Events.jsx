@@ -13,6 +13,7 @@ import WS3 from "../assets/WS3.jpeg";
 import WS4 from "../assets/WS4.jpeg";
 
 import workshopImg from "../../assets/images/workshop.jpg";
+import trophyImg from "../../assets/images/trophy1.jpg";
 
 function Events() {
   const [activeCard, setActiveCard] = useState(null);
@@ -43,7 +44,9 @@ function Events() {
               <div className="event-caption">EPISODE 1</div>
 
               <div className="event-icon-wrapper">
-                <div className="event-icon"></div>
+                <div className="event-icon">
+                  <img src={trophyImg} alt="Hackathon" className="event-icon-img" />
+                </div>
               </div>
 
               <h3 className="event-title">Hackathons</h3>
