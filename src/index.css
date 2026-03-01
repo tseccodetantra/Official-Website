@@ -309,7 +309,8 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
-    align-items: start; /* ← ADD THIS */
+    align-items: start;
+    /* ← ADD THIS */
 }
 
 /* ============================= */
@@ -376,6 +377,16 @@ body {
 
 .event-icon {
     font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.event-icon-img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 10px;
 }
 
 /* ============================= */
@@ -438,9 +449,17 @@ body {
     transition: 0.3s ease;
 }
 
-.polaroid:nth-child(2) { transform: rotate(4deg); }
-.polaroid:nth-child(3) { transform: rotate(-5deg); }
-.polaroid:nth-child(4) { transform: rotate(3deg); }
+.polaroid:nth-child(2) {
+    transform: rotate(4deg);
+}
+
+.polaroid:nth-child(3) {
+    transform: rotate(-5deg);
+}
+
+.polaroid:nth-child(4) {
+    transform: rotate(3deg);
+}
 
 .polaroid:hover {
     transform: scale(1.05) rotate(0deg);

@@ -12,6 +12,8 @@ import WS2 from "../assets/WS2.jpeg";
 import WS3 from "../assets/WS3.jpeg";
 import WS4 from "../assets/WS4.jpeg";
 
+import workshopImg from "../../assets/images/workshop.jpg";
+
 function Events() {
   const [activeCard, setActiveCard] = useState(null);
 
@@ -25,10 +27,10 @@ function Events() {
         <h2 className="section-title">Our Events</h2>
         <div className="section-underline"></div>
 
-                <p className="events-intro">
-                    Choose your battle! From code wars to robot rumbles, we've got challenges
-                    that'll push every tech warrior to their limits. 🔥
-                </p>
+        <p className="events-intro">
+          Choose your battle! From code wars to robot rumbles, we've got challenges
+          that'll push every tech warrior to their limits.
+        </p>
 
         <div className="events-grid">
 
@@ -41,7 +43,7 @@ function Events() {
               <div className="event-caption">EPISODE 1</div>
 
               <div className="event-icon-wrapper">
-                <div className="event-icon">🏆</div>
+                <div className="event-icon"></div>
               </div>
 
               <h3 className="event-title">Hackathons</h3>
@@ -87,7 +89,9 @@ function Events() {
               <div className="event-caption">EPISODE 2</div>
 
               <div className="event-icon-wrapper">
-                <div className="event-icon">💡</div>
+                <div className="event-icon">
+                  <img src={workshopImg} alt="Workshop" className="event-icon-img" />
+                </div>
               </div>
 
               <h3 className="event-title">Workshops</h3>
